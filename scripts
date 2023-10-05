@@ -1,0 +1,5 @@
+docker build -t vllm-runpod . --platform linux/amd64 --build-arg HUGGING_FACE_HUB_TOKEN=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 --build-arg MODEL_NAME=TheBloke/Genz-70b-AWQ
+
+docker build -t tgi-runpod --build-arg HF_MODEL_ID="TheBloke/Genz-70b-GPTQ" --build-arg HF_MODEL_REVISION="main" --build-arg SM_NUM_GPUS="1" --build-arg HF_MODEL_QUANTIZE="gptq" --build-arg HF_MODEL_TRUST_REMOTE_CODE="true" --build-arg HUGGING_FACE_HUB_TOKEN="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" --build-arg DOWNLOAD_MODEL="1" .
+
+docker build -t fanalytics/everpedia-runpod:1.0.0 . --build-arg HUGGING_FACE_HUB_TOKEN=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 --build-arg MODEL_NAME=TheBloke/Genz-70b-GPTQ
