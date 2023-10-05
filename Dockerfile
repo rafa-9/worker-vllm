@@ -18,7 +18,7 @@ RUN chmod +x /setup.sh && \
     rm /setup.sh
 
 # Install fast api
-RUN pip install fastapi
+RUN pip install fastapi==0.99.1
 
 # Install Python dependencies (Worker Template)
 COPY builder/requirements.txt /requirements.txt
