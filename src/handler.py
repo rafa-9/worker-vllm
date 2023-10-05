@@ -20,6 +20,20 @@ USE_FULL_METRICS = os.environ.get('USE_FULL_METRICS', True)
 if not MODEL_NAME:
     print("Error: The model has not been provided.")
 
+model_directory = f"{MODEL_BASE_PATH}{MODEL_NAME.split('/')[1]}"
+
+# check if model directory exists. else, download model
+if not os.path.isdir(model_directory):
+    print("Downloading model...")
+    try:
+        download_model()
+    except Exception as e:
+        print(f"Error downloading model: {e}")
+        # delete model directory if it exists
+        if os.path.isdir(model_directory):
+            os.system(f"rm -rf {model_directory}")
+        raise e
+
 # Tensor parallelism
 try:
     NUM_GPU_SHARD = int(os.environ.get('NUM_GPU_SHARD', 1))

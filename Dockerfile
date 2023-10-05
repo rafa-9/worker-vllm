@@ -63,7 +63,7 @@ ENV MODEL_NAME=$MODEL_NAME \
     HUGGING_FACE_HUB_TOKEN=$HUGGING_FACE_HUB_TOKEN
 
 # Run the Python script to download the model
-RUN python -u /download_model.py
+# RUN python -u /download_model.py
 
 # Start the handler
 CMD STREAMING=$STREAMING MODEL_NAME=$MODEL_NAME MODEL_BASE_PATH=$MODEL_BASE_PATH TOKENIZER=$TOKENIZER python -u /handler.py 
