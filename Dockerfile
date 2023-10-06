@@ -54,7 +54,7 @@ ENV HUGGINGFACE_HUB_CACHE="/runpod-volume/huggingface-cache/hub"
 ENV TRANSFORMERS_CACHE="/runpod-volume/huggingface-cache/hub"
 
 # Download the models
-# RUN mkdir -p /model
+RUN mkdir -p /Genz-70b-AWQ
 
 # Symlinking files from Network Volume
 RUN ln -s /runpod-volume/Genz-70b-AWQ /Genz-70b-AWQ
