@@ -54,7 +54,7 @@ ENV HUGGINGFACE_HUB_CACHE="/runpod-volume/huggingface-cache/hub"
 ENV TRANSFORMERS_CACHE="/runpod-volume/huggingface-cache/hub"
 
 # Download the models
-RUN mkdir -p /model
+# RUN mkdir -p /model
 
 # Set environment variables
 ENV MODEL_NAME=$MODEL_NAME \
