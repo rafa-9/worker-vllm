@@ -7,6 +7,8 @@ MODEL_NAME = os.environ.get("MODEL_NAME", "TheBloke/Genz-70b-AWQ")
 MODEL_REVISION = os.environ.get("MODEL_REVISION", "main")
 MODEL_BASE_PATH = os.environ.get("MODEL_BASE_PATH", "/runpod-volume/")
 
+echo "Symlinking files from Network Volume"
+ln -s /runpod-volume/Genz-70b-AWQ /Genz-70b-AWQ
 
 def download_model():
     # Download the model from hugging face
