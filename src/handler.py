@@ -44,7 +44,7 @@ except ValueError:
 
 # Prepare the engine's arguments
 engine_args = AsyncEngineArgs(
-    model=model_directory,
+    model=f"{MODEL_NAME.split('/')[1]}",
     tokenizer=TOKENIZER,
     tokenizer_mode="auto",
     tensor_parallel_size=NUM_GPU_SHARD,
