@@ -44,13 +44,13 @@ except ValueError:
 
 # Prepare the engine's arguments
 engine_args = AsyncEngineArgs(
-    model=f"{MODEL_BASE_PATH.split('/')[1]}/{MODEL_NAME.split('/')[1]}",
+    model=f"{MODEL_BASE_PATH}{MODEL_NAME.split('/')[1]}",
     tokenizer=TOKENIZER,
     tokenizer_mode="auto",
     tensor_parallel_size=NUM_GPU_SHARD,
     dtype="auto",
     seed=0,
-    download_dir=model_directory,
+    # download_dir=model_directory,
     max_num_batched_tokens=8192,
     disable_log_stats=False,
     # max_num_seqs=256,

@@ -23,7 +23,7 @@ def download_model():
         repo_id=MODEL_NAME,
         revision=MODEL_REVISION,
         local_dir=DOWNLOAD_PATH,
-        local_dir_use_symlinks=False,
+        # local_dir_use_symlinks=False,
         **download_kwargs,
     )
 
